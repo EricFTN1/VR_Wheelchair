@@ -129,25 +129,6 @@ STL files can be found in the `cad/` directory.
 
 ---
 
-## Media
-
-### Completed System
-
-<img src="images/vr_wheelchair_system.jpg" width="700">
-
-### Sensor Mount Assembly
-
-<img src="images/sensor_mount.jpg" width="700">
-
-### Unreal Engine Environment
-
-<img src="images/unreal_environment.jpg" width="700">
-
-### Demonstration
-
-<img src="images/demo.gif" width="700">
-
-
 ## Authors
 - Eric Nguyen
 - Jake Cooper
