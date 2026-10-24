@@ -4,62 +4,67 @@ A virtual reality wheelchair simulation system that tracks physical wheelchair w
 
 ---
 
+## Demonstration
+[🎥 YouTube Demo:](https://youtube.com/shorts/3MWNplKcLuM?feature=share)]
+
+[📰 Featured by UTA Computer Science & Engineering](https://websites.uta.edu/cseseniordesign/2024/12/09/access-vr/)]
+
+---
+
 ## Overview
 
-This project bridges physical wheelchair movement with a virtual reality environment. Rotary sensors attached to the wheelchair wheels measure wheel rotation and direction, while an Arduino Uno processes sensor data and transmits movement information to Unreal Engine.
+This project bridges physical wheelchair movement with a virtual reality environment. Rotary encoders attached to the wheelchair wheels measure wheel rotation and direction, while an Elegoo Mega 2560 processes the sensor data and transmits movement information to Unreal Engine.
 
-The system enables users to navigate a virtual environment through real-world wheelchair movement, combining mechanical design, embedded systems, sensor integration, and game engine development.
+The result is a VR system that allows users to navigate a virtual environment using natural wheelchair motion.
 
 ---
 
 ## My Contributions
 
-I was primarily responsible for the hardware integration, mechanical design, and documentation of the project.
+I was primarily responsible for the hardware integration, mechanical design, embedded systems implementation, and project documentation.
 
 ### Mechanical Design
 
-- Designed custom 3D-printed components in Tinkercad to securely mount rotary sensors to wheelchair wheels.
-- Designed mounting hardware while accounting for mechanical fit, alignment, and manufacturing tolerances.
-- Iteratively refined printed components through testing to improve reliability and installation.
+- Designed custom 3D-printed components in Tinkercad to mount LPD3806 optical rotary quadrature encoders to the wheelchair wheels.
+- Designed mounting hardware while accounting for alignment, fitment, and manufacturing tolerances.
+- Developed a custom 3D-printed friction mechanism to provide resistance while the wheelchair was suspended during testing and demonstrations.
+- Iteratively refined designs to improve durability and sensor reliability.
 
-### Sensor Integration
+### Embedded Systems Integration
 
-- Integrated rotary sensors with an Arduino Elegoo Uno R3, for wheel movement tracking.
-- Assisted in calibrating sensors to accurately measure wheel rotation and travel distance.
-- Tested and validated sensor performance under real-world operating conditions.
-
-### Data Communication
-
-- Assisted in transmitting wheel movement data from the Arduino Uno to Unreal Engine.
-- Participated in system integration testing to ensure virtual movement corresponded accurately with real-world wheelchair movement.
+- Integrated LPD3806 optical rotary quadrature encoders with an Elegoo Mega 2560.
+- Developed Arduino firmware to capture and process wheel movement data.
+- Calibrated and tested encoder measurements to improve tracking accuracy.
+- Transmitted movement data to the Unreal Engine simulation environment.
 
 ### Documentation & Presentation
 
-- Created the majority of the project's technical documentation and presentation materials.
-- Developed system diagrams, visual aids, and engineering documentation used throughout the project.
-- Designed presentation graphics and the final project showcase materials.
+- Created the majority of the project's technical documentation.
+- Developed diagrams, visual aids, and engineering documentation.
+- Designed project presentation materials and showcase displays.
 
 ---
 
 ## Features
 
-- Real-time wheelchair wheel movement tracking
-- Custom 3D-printed sensor mounting hardware
-- Arduino Uno-based data acquisition system
-- Rotary sensor position and rotation measurement
-- Serial communication with Unreal Engine
-- Real-time virtual wheelchair movement
-- Hardware and software system integration
+- Real-time wheelchair wheel tracking
+- Optical quadrature encoder integration
+- Arduino-based motion processing
+- Custom 3D-printed sensor mounts
+- Custom friction mechanism for testing
+- Real-time data transmission to Unreal Engine
+- Virtual navigation through physical wheelchair movement
 
 ---
 
 ## Hardware Components
 
-- Arduino Elegoo Uno R3
-- Rotary Encoders
+- Elegoo Mega 2560
+- LPD3806 Optical Rotary Quadrature Encoders
 - Manual Wheelchair Platform
+- Custom 3D-Printed Mounting Hardware
+- Custom 3D-Printed Friction Components
 - USB Serial Communication
-- Custom 3D-Printed Components
 
 ---
 
@@ -68,18 +73,28 @@ I was primarily responsible for the hardware integration, mechanical design, and
 - Arduino IDE
 - Unreal Engine
 - Serial Communication Interface
-- Custom Data Processing Logic
+- Custom Sensor Processing Logic
 
 ---
 
 ## How It Works
 
-1. Rotary sensors measure wheelchair wheel rotation.
-2. The Arduino Uno collects sensor data.
-3. Movement data is processed and transmitted to a computer.
-4. Unreal Engine receives the wheel movement data.
-5. Virtual wheelchair movement is updated in real time.
-6. Users navigate the VR environment through physical wheelchair motion.
+1. Rotary encoders measure wheelchair wheel rotation.
+2. The Elegoo Mega 2560 collects encoder data.
+3. Wheel movement is processed and converted into navigation data.
+4. Movement information is transmitted to a computer.
+5. Unreal Engine receives the data and updates virtual wheelchair movement.
+6. Users navigate the virtual environment through physical wheelchair motion.
+
+---
+
+## Engineering Lessons Learned
+
+- Migrated from an Arduino Uno R3 to an Elegoo Mega 2560 due to increased interrupt requirements for quadrature encoder processing.
+- Learned to debug open-collector encoder outputs using pull-up resistors and an oscilloscope.
+- Gained experience analyzing quadrature encoder A/B phase signals for motion tracking.
+- Improved reliability through multiple iterations of custom 3D-printed mounting hardware.
+- Learned the importance of validating individual subsystems before full system integration.
 
 ---
 
@@ -88,46 +103,49 @@ I was primarily responsible for the hardware integration, mechanical design, and
 - Embedded Systems
 - Arduino Development
 - Sensor Integration
+- Quadrature Encoder Processing
 - Serial Communication
-- Unreal Engine Development
-- CAD Design
-- Tinkercad
+- CAD Design (Tinkercad)
 - 3D Printing
 - Mechanical Design
-- System Calibration
 - Hardware/Software Integration
+- System Calibration
 - Technical Documentation
-
----
-
-## Challenges
-
-- Designing sensor mounting hardware that maintained alignment during wheelchair movement.
-- Managing tolerances between 3D-printed and commercial components.
-- Ensuring accurate wheel movement tracking.
-- Synchronizing physical and virtual movement.
-- Creating reliable communication between the Arduino and Unreal Engine.
+- Engineering Design
 
 ---
 
 ## Documentation
 
-Engineering documentation for the project is available in the `docs/` directory.
+Additional engineering documentation can be found in the `docs/` directory:
 
 - System Requirements Specification (SRS)
 - Architectural Design Specification
 - Detailed Design Specification
-- Final Project Presentation
+- Project Presentation Materials
 
 ---
 
 ## Design Files
 
-Custom mounting components were designed in Tinkercad and optimized through multiple development iterations.
+Custom mounting hardware and support components were designed in Tinkercad.
 
-STL files can be found in the `cad/` directory.
+STL files are located in the `cad/` directory.
 
 ---
+
+## Repository Structure
+
+```text
+vr-wheelchair-simulator/
+├── README.md
+├── LICENSE
+├── src/
+│   └── wheelchair_encoder.ino
+├── cad/
+├── docs/
+└── images/
+```
 
 ## Authors
 - Eric Nguyen
