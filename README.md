@@ -5,7 +5,7 @@ A virtual reality wheelchair simulation system that tracks physical wheelchair w
 ---
 
 ## Demonstration
-[🎥 YouTube Demo:](https://youtube.com/shorts/3MWNplKcLuM?feature=share)]
+[🎥 YouTube Demo](https://youtube.com/shorts/3MWNplKcLuM?feature=share)
 
 [📰 Featured by UTA Computer Science & Engineering](https://websites.uta.edu/cseseniordesign/2024/12/09/access-vr/)]
 
